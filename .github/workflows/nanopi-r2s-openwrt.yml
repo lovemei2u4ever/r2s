@@ -51,21 +51,22 @@ jobs:
         mv -f "bin/targets/rockchip/armv8/openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz" "../openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz"
         mv -f "bin/targets/rockchip/armv8/openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz" "../openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz"
         mv -f "bin/targets/rockchip/armv8/sha256sums" "../openwrt-18.06-sha256sums"
-    - name: Upload OpenWrt-18.06 SHA256SUM Hash
-      uses: actions/upload-artifact@v2
+    - name: Assemble Artifact
+      id: assemble_artifact
+      run: |
+        rm -rf ./artifact/
+        mkdir -p ./artifact/
+        cp openwrt/bin/targets/rockchip/armv8/*.img.gz ./artifact/
+        cd openwrt
+        cd ..
+        zip -r artifact.zip ./artifact/
+        release_tag="R2S-$(date +%Y-%m-%d)"
+        echo "##[set-output name=release_tag;]$release_tag"
+    - name: Upload Artifact
+      uses: actions/upload-artifact@master
       with:
-        name: openwrt-18.06-sha256sums
-        path: /home/runner/openwrt-18.06-sha256sums
-    - name: Upload OpenWrt-18.06 EXT4 Firmware
-      uses: actions/upload-artifact@v2
-      with:
-        name: openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
-        path: /home/runner/openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
-    - name: Upload OpenWrt-18.06 SquashFS Firmware
-      uses: actions/upload-artifact@v2
-      with:
-        name: openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz
-        path: /home/runner/openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz
+        name: ${{ steps.assemble_artifact.outputs.release_tag }}-ROM
+        path: ./artifact.zip
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -76,6 +77,7 @@ jobs:
         release_name: 自动发布 ${{ steps.assemble_artifact.outputs.release_tag }}
         draft: false
         prerelease: false
+
     - name: Upload Release Asset
       id: upload-release-asset
       uses: actions/upload-release-asset@v1
