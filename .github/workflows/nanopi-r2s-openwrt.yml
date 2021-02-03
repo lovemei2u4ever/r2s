@@ -74,7 +74,7 @@ jobs:
         name: ${{ steps.assemble_artifact.outputs.release_tag }}-ROM
         path: ./artifact.zip
     
-- name: Create Release
+    - name: Create Release
       id: create_release
       uses: actions/create-release@main
       env:
