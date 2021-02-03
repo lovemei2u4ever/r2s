@@ -54,8 +54,8 @@ jobs:
     - name: Upload OpenWrt-Snapshot EXT4 Firmware
       uses: actions/upload-artifact@v2
       with:
-        name: openwrt-snapshot-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
-        path: /home/runner/openwrt-snapshot-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
+        name: openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
+        path: /home/runner/openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
   Cleanup-Old-Artifacts:
     needs: [OpenWrt-18_06]
     runs-on: ubuntu-18.04
