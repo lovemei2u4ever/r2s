@@ -1,6 +1,4 @@
 ## OpenWrt Firmwares for NanoPi-R2S
-### ⚠ WARNING: USE IT UNDER YOUR OWN RISK.
-### ⛔️ WARNING: THIS IS DEPRECATED.
 - - -
 ## Introduction
 - ### Usage
@@ -24,9 +22,6 @@
   AccessControl, ADbyby, CFDisk, DDNS, DiskMan, FRP, JingDong-DailyBonus, LRZSZ, MentoHUST, Multi-Dial,<br/>
  OLED, OpenClash, PassWall, Sensors, ServerChan, SoftetherVPN, SpeedTest-CLI, SQM, SSRPlus, Statistics,<br/>
  Stress, Tmate, UnblockNeteaseMusic, UPNP, Wake-On-LAN, WireGuard, ZeroTier etc.
-- - -
-## Buy Me a Coffee
-[AFDian @CN\_SZTL](https://afdian.net/@CN\_SZTL/plan)
 - - -
 ## Announcement
 ### License
