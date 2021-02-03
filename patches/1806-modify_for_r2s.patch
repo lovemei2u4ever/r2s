@@ -50,6 +50,18 @@ index 067aad2763..b221186ba4 100644
  	option sfe_ipv6 '0'
  	option bbr_cca '1'
  	option fullcone_nat '1'
+diff --git a/package/base-files/files/bin/config_generate b/package/base-files/files/bin/config_generate
+index abb1388ba1..79e12bd3ff 100755
+--- a/package/base-files/files/bin/config_generate
++++ b/package/base-files/files/bin/config_generate
+@@ -100,7 +100,7 @@ generate_network() {
+ 		static)
+ 			local ipad
+ 			case "$1" in
+-				lan) ipad=${ipaddr:-"192.168.1.1"} ;;
++				lan) ipad=${ipaddr:-"192.168.2.1"} ;;
+ 				*) ipad=${ipaddr:-"192.168.$((addr_offset++)).1"} ;;
+ 			esac
 diff --git a/package/ctcgfw/luci-app-vssr/root/usr/share/vssr/genconfig_trojan.lua b/package/ctcgfw/luci-app-vssr/root/usr/share/vssr/genconfig_trojan.lua
 index 875813dc08..f2e186e9c2 100644
 --- a/package/ctcgfw/luci-app-vssr/root/usr/share/vssr/genconfig_trojan.lua
