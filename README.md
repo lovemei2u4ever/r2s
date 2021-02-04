@@ -2,8 +2,6 @@
 - - -
 ## Introduction
 - ### Usage
-0. There're two versions: SHAPSHOT and 18.06, you can choose according to your preferences.<br/>
- Please make sure at least **1G** space left on you SD card.
 1. Default login addr is [192.168.1.1](192.168.1.1), username / password: `root` / `password`.<br/>
  Please change the login password **as soon as possible** once you logined.
 2. Once you flashed the firmware into SD card, you may simply use "Upgrade" function<br/>
@@ -19,9 +17,7 @@
 - ### Advantages
   To make you feel that everything is a matter of course.
 - ### Applications
-  AccessControl, ADbyby, CFDisk, DDNS, DiskMan, FRP, JingDong-DailyBonus, LRZSZ, MentoHUST, Multi-Dial,<br/>
- OLED, OpenClash, PassWall, Sensors, ServerChan, SoftetherVPN, SpeedTest-CLI, SQM, SSRPlus, Statistics,<br/>
- Stress, Tmate, UnblockNeteaseMusic, UPNP, Wake-On-LAN, WireGuard, ZeroTier etc.
+  DDNS, JingDong-DailyBonus, PassWall, Sensors, ServerChan,  SSRPlus, Statistics,UPNP, Wake-On-LAN.
 - - -
 ## Announcement
 ### License
