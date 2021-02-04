@@ -72,7 +72,7 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: ${{ steps.assemble_artifact.outputs.release_tag }}-ROM
-        path: ./artifact.zip
+        path: /home/runner/artifact.zip
     
     - name: Create Release
       id: create_release
