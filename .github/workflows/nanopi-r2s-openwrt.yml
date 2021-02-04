@@ -3,6 +3,8 @@ name: NanoPi R2S OpenWrt
 on:
   repository_dispatch:
   workflow_dispatch:
+  schedule: 
+    - cron: '5 15 * * 0' 
 
 jobs:
   OpenWrt-18_06:
