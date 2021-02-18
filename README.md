@@ -1,4 +1,5 @@
 ## OpenWrt Firmwares for NanoPi-R2S
+![NanoPi R2S OpenWrt](https://github.com/lovemei2u4ever/r2s/workflows/NanoPi%20R2S%20OpenWrt/badge.svg)
 - - -
 ## Introduction
 - ### Usage
