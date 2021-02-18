@@ -1,8 +1,12 @@
 name: NanoPi R2S OpenWrt
 
 on:
+  watch:
+    types: started
+  
   repository_dispatch:
   workflow_dispatch:
+  
   schedule: 
     - cron: '5 15 * * 0' 
 
