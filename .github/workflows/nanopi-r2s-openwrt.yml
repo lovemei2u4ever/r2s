@@ -6,7 +6,12 @@ on:
   
   repository_dispatch:
   workflow_dispatch:
-  
+    inputs:
+      wxtz:
+      description: '微信通知'
+      required: ture
+      default: 'wxtz-actions'
+      
   schedule: 
     - cron: '5 15 * * *' 
 env:
