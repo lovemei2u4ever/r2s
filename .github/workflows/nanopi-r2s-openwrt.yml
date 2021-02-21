@@ -76,7 +76,6 @@ jobs:
         
     - name: 微信通知
       uses: emon100/Action-Serverchan@v2
-      if: env.SERVERCHAN_SCKEY == 'true' || (github.event.inputs.wxtz == 'wxtz' && github.event.inputs.wxtz  != 'false')
       with:
         SCKEY: ${{ secrets.SCKEY }}
         text: 编译结束
