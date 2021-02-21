@@ -5,13 +5,7 @@ on:
     types: started
   
   repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      wxtz:
-      description: '微信通知'
-      required: ture
-      default: 'wxtz-actions'
-      
+  workflow_dispatch:    
   schedule: 
     - cron: '5 15 * * *' 
 env:
@@ -55,7 +49,6 @@ jobs:
 
     - name: 微信通知
       uses: emon100/Action-Serverchan@v2
-      if: env.SERVERCHAN_SCKEY == 'true' || (github.event.inputs.wxtz == 'wxtz' && github.event.inputs.wxtz  != 'false')
       with:
         SCKEY: ${{ secrets.SCKEY }}
         text: 编译开始
