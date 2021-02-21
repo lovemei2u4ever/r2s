@@ -9,6 +9,8 @@ on:
   
   schedule: 
     - cron: '5 15 * * *' 
+env:
+  SCKEY: ${{ secrets.SCKEY }}
 
 jobs:
   OpenWrt-18_06:
@@ -45,6 +47,15 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         patch -p1 < "${GITHUB_WORKSPACE}/patches/1806-modify_for_r2s.patch"
+
+    - name: 微信通知
+      uses: emon100/Action-Serverchan@v2
+      if: env.SERVERCHAN_SCKEY == 'true' || (github.event.inputs.wxtz == 'wxtz' && github.event.inputs.wxtz  != 'false')
+      with:
+        SCKEY: ${{ secrets.SCKEY }}
+        text: 编译开始
+        desp: 固件正在努力编译中,请耐心等待......
+        
     - name: Build OpenWrt-18.06
       run: |
         cd "/home/runner/openwrt"
@@ -64,6 +75,14 @@ jobs:
       with:
         name: openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
         path: /home/runner/openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz
+        
+    - name: 微信通知
+      uses: emon100/Action-Serverchan@v2
+      if: env.SERVERCHAN_SCKEY == 'true' || (github.event.inputs.wxtz == 'wxtz' && github.event.inputs.wxtz  != 'false')
+      with:
+        SCKEY: ${{ secrets.SCKEY }}
+        text: 编译结束
+        desp: 固件编译结束！
         
     - name: Assemble Artifact
       id: assemble_artifact
