@@ -57,7 +57,7 @@ jobs:
       if: failure()
       run: |
         cd "/home/runner/openwrt"
-        make -j1 V=s
+        make V=99
         mv -f "bin/targets/rockchip/armv8/immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz" "../openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz"
     - name: Upload OpenWrt-Snapshot EXT4 Firmware
       uses: actions/upload-artifact@v2
