@@ -51,17 +51,14 @@ jobs:
         cp -f "${GITHUB_WORKSPACE}/configs/1806-config.seed" ".config"
         make defconfig
         make -j$[$(nproc)+1]
-        cd "bin/targets/rockchip/armv8"
-        ls
-        mv -f "bin/targets/rockchip/armv8/*ext4-sysupgrade.img.gz" "../openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz"
+        mv -f "bin/targets/rockchip/armv8/immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz" "../openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz"
 
     - name: Rebuild OpenWrt-18.06 to Collect Error Log
       if: failure()
       run: |
         cd "/home/runner/openwrt"
         make -j1 V=s
-        ls
-        mv -f "bin/targets/rockchip/armv8/openwrt-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz" "../openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz"
+        mv -f "bin/targets/rockchip/armv8/immortalwrt-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz" "../openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz"
     - name: Upload OpenWrt-Snapshot EXT4 Firmware
       uses: actions/upload-artifact@v2
       with:
