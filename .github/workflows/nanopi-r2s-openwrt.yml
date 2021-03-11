@@ -80,7 +80,7 @@ jobs:
       run: |
         rm -rf ./artifact/
         mkdir -p ./artifact/
-        cp openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz ./artifact/
+        cp /home/runner/openwrt-18.06-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz ./artifact/
         zip -r artifact.zip ./artifact/
         release_tag="Terry-$(date +%Y-%m-%d)"
         echo "##[set-output name=release_tag;]$release_tag"
