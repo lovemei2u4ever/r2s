@@ -98,11 +98,11 @@ jobs:
     - name: Send notification via bark
       if: failure()
       run: |
-        curl http://hk.19931026.xyz:8080/gujjwxzxlfqxsldw/immoralWrt固件编译通知/r2s_18.06固件编译出错啦！
+        curl https://nas.19931026.xyz:7788/nbtrebosectsxous/immoralWrt固件编译通知/r2s_18.06固件编译出错啦！
       
     - name: Send bark notification
       run: |
-        curl http://hk.19931026.xyz:8080/gujjwxzxlfqxsldw/immoralWrt固件编译通知/r2s_18.06固件编译通过！   
+        curl https://nas.19931026.xyz:7788/nbtrebosectsxous/immoralWrt固件编译通知/r2s_18.06固件编译通过！   
   
   Cleanup-Old-Artifacts:
     needs: [OpenWrt-18_06]
