@@ -49,7 +49,7 @@ jobs:
        
     - name: Send notification via bark
       run: |
-        curl http://hk.19931026.xyz:8080/gujjwxzxlfqxsldw/immoralWrt固件编译通知/r2s_18.06固件编译开始！
+        curl https://nas.19931026.xyz:7788/nbtrebosectsxous/immoralWrt固件编译通知/r2s_18.06固件编译开始！
         
     - name: Build OpenWrt-18.06
       run: |
