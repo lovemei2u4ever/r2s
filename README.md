@@ -3,7 +3,7 @@
 - - -
 ## Introduction
 - ### Usage
-1. Default login addr is [192.168.1.1](192.168.1.1), username / password: `root` / `password`.<br/>
+1. Default login addr is [192.168.1.1](192.168.2.1), username / password: `root` / `password`.<br/>
  Please change the login password **as soon as possible** once you logined.
 2. Once you flashed the firmware into SD card, you may simply use "Upgrade" function<br/>
  in LuCI (no need to decompress the **.gz** archive) if you want to update it.
