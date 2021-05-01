@@ -52,7 +52,9 @@ jobs:
         sed -i 's,"eth1" "eth0","eth0" "eth1",g' target/linux/rockchip/armv8/base-files/etc/board.d/02_network
         sed -i "s,'eth1' 'eth0','eth0' 'eth1',g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
         #Change to 5.10
-        sed -i 's/KERNEL_PATCHVER=5.4/KERNEL_PATCHVER=5.10/g' target/linux/rockchip/Makefile
+        #sed -i 's/KERNEL_PATCHVER=5.4/KERNEL_PATCHVER=5.10/g' target/linux/rockchip/Makefile
+        sed -i 's/KERNEL_PATCHVER=5.4/KERNEL_PATCHVER=4.19/g' target/linux/rockchip/Makefile
+        
        
     - name: Send notification via bark
       run: |
