@@ -92,7 +92,7 @@ jobs:
 
     - name: Send notification via bark
       run: |
-        curl https://bark.19931026.xyz/LFy9GgPFENRCkzHFJBFuE7//immoralWrt固件编译通知/r2s_18.06固件编译开始！
+        curl https://bark.19931026.xyz/LFy9GgPFENRCkzHFJBFuE7/immoralWrt固件编译通知/r2s_18.06固件编译开始！
         
     - name: Build OpenWrt-18.06
       run: |
@@ -141,11 +141,11 @@ jobs:
     - name: Send notification via bark
       if: failure()
       run: |
-        curl https://bark.19931026.xyz/LFy9GgPFENRCkzHFJBFuE7//immoralWrt固件编译通知/r2s_18.06固件编译出错啦！
+        curl https://bark.19931026.xyz/LFy9GgPFENRCkzHFJBFuE7/immoralWrt固件编译通知/r2s_18.06固件编译出错啦！
       
     - name: Send bark notification
       run: |
-        curl https://bark.19931026.xyz/LFy9GgPFENRCkzHFJBFuE7//immoralWrt固件编译通知/r2s_18.06固件编译通过！   
+        curl https://bark.19931026.xyz/LFy9GgPFENRCkzHFJBFuE7/immoralWrt固件编译通知/r2s_18.06固件编译通过！   
   
   Cleanup-Old-Artifacts:
     needs: [OpenWrt-18_06]
