@@ -45,7 +45,7 @@ jobs:
         cd "/home/runner/openwrt"
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        .$GITHUB_WORKSPACE/patch&mod.sh
+        .$GITHUB_WORKSPACE/patch-mod.sh
         #patch -p1 < "${GITHUB_WORKSPACE}/patches/1806-modify_for_r2s.patch"
 
     - name: Send notification via bark
