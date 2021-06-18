@@ -80,6 +80,8 @@ jobs:
         sed -i "s,'eth1' 'eth0','eth0' 'eth1',g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
         #Change to 5.10
         #sed -i 's/KERNEL_PATCHVER=5.4/KERNEL_PATCHVER=5.10/g' target/linux/rockchip/Makefile
+        #tencentddns
+        git clone https://github.com/Beginner-Go/luci-app-tencentddns.git package/new/luci-app-tencentddns
         #jd-dailybonus 更新
         git clone --depth 1 https://github.com/jerrykuku/node-request.git package/new/node-request
         svn co -r131 https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk package/new/luci-app-jd-dailybonus
