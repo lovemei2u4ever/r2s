@@ -60,7 +60,7 @@ jobs:
         sed -i '/DEPENDS+/ s/$/ +wsdd2/' `find . -type f -path '*/ksmbd-tools/Makefile'`
         
         sed -i "s/enable '0'/enable '1'/" `find feeds/ -type f -name oled | grep config`
-        sed -i 's/1400000/1450000/' target/linux/rockchip/patches-5.4/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+        sed -i 's/1400000/1450000/' target/linux/rockchip/patches-4.19/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
         truncate -s-1 package/feeds/luci/luci-app-cpufreq/root/etc/config/cpufreq
         echo -e "\toption governor0 'schedutil'" >> package/feeds/luci/luci-app-cpufreq/root/etc/config/cpufreq
         echo -e "\toption minfreq0 '816000'" >> package/feeds/luci/luci-app-cpufreq/root/etc/config/cpufreq
